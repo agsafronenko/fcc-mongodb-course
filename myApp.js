@@ -1,5 +1,17 @@
-require('dotenv').config();
+require("dotenv").config();
+const mongoose = require("mongoose");
 
+async function connect() {
+  // try and catch method is a convinient method to check whether the connection has been established
+  try {
+    await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }); // use this syntax to connect to mongoose dtbase;     process.env.MONGO_URI (stored in .env file which is hidden from others) includes the link to the database and password required for connection
+    console.log("connected");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+connect();
 
 let Person;
 
