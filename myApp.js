@@ -13,6 +13,8 @@ async function connect() {
 
 connect();
 
+console.log("it's working");
+
 let Person;
 
 const createAndSavePerson = (done) => {
