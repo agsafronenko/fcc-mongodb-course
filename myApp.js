@@ -14,6 +14,7 @@ async function connect() {
 connect();
 
 console.log("it's working");
+console.log("it's really working");
 
 let Person;
 
