@@ -13,11 +13,13 @@ async function connect() {
 
 connect();
 
-console.log("it's working");
-console.log("it's really working");
-console.log("no way, but how it's working?!");
+const personSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  favoriteFoods: [String],
+});
 
-let Person;
+let Person = mongoose.model("Person", personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
